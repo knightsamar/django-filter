@@ -89,8 +89,8 @@ class RangeWidget(forms.MultiWidget):
         return [None, None]
 
     def format_output(self, rendered_widgets):
-        return '-'.join(rendered_widgets)
-
+        #since we have a fixed number of range textboxes
+        return 'from %s - to  %s ' % (rendered_widgets[0],rendered_widgets[1])
 
 class LookupTypeWidget(forms.MultiWidget):
     def decompress(self, value):
